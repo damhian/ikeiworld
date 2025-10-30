@@ -1,6 +1,6 @@
 IkeiWorld 🌍
 
-==Highlights:==
+<mark>Highlights:</mark>
 
 - 🌐 Real-time Messaging with Typing Indicators & Reactions
 - 📹 1-on-1 and Group Video Calls with Screen Sharing & Recording
@@ -38,14 +38,14 @@ VITE_STREAM_API_KEY=your_stream_api_key
 
 ```bash
 cd backend
-npm install
-npm run dev
+bun install
+bun run dev
 ```
 
 ## 💻 Run the Frontend
 
 ```bash
 cd frontend
-npm install
-npm run dev
+bun install
+bun run dev
 ```

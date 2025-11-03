@@ -3,8 +3,7 @@ import { Link } from "react-router";
 
 import ilogo from "/ilogo_nobg.png";
 import i_img from "/i.png";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { signup } from "../lib/api";
+import useSignUp from "../hooks/useSignUp";
 
 const SignUpPage = () => {
   const [signUpData, setSignUpData] = useState({
@@ -13,16 +12,17 @@ const SignUpPage = () => {
     password: "",
   });
 
-  const queryClient = useQueryClient();
+  // const queryClient = useQueryClient();
+  // const {
+  //   mutate: signupMutation,
+  //   isPending,
+  //   error,
+  // } = useMutation({
+  //   mutationFn: signup,
+  //   onSuccess: () => queryClient.invalidateQueries({ queryKey: ["authUser"] }),
+  // });
 
-  const {
-    mutate: signupMutation,
-    isPending,
-    error,
-  } = useMutation({
-    mutationFn: signup,
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["authUser"] }),
-  });
+  const { isPending, error, signupMutation } = useSignUp();
 
   const handleSignUp = (e) => {
     e.preventDefault();

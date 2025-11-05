@@ -105,11 +105,13 @@ const HomePage = () => {
             <NoRecommendedUser />
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {recommendedUsers.map((user) => {
+              {recommendedUsers.map((user, key) => {
                 const hasRequestBeenSent = outgoingRequestsIds.has(user._id);
 
                 return (
-                  <div className="card bg-base-200 hover:shadow-lg transition-all duration-300">
+                  <div
+                    className="card bg-base-200 hover:shadow-lg transition-all duration-300"
+                    key={key}>
                     <div className="card-body p-5 space-y-4">
                       <div className="flex items-center gap-3">
                         <div className="avatar size-16 rounded-full">
